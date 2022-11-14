@@ -1,7 +1,7 @@
 ﻿
 using Directory;
 
-WorkDirectory Wdirektory=new WorkDirectory();
+WorkDirectory Wdirektory = new WorkDirectory();
 void menu()
 {
     Console.WriteLine();
@@ -12,10 +12,12 @@ void menu()
     Console.WriteLine($"5) Создать текстовый файл");
     Console.WriteLine($"6) Прочитать информацию из какого-либо файла");
     Console.WriteLine($"7) Записать информацию в файл");
+    Console.WriteLine($"8) Изменить имя пользователя");
     Console.WriteLine();
 }
 void GetMenu()
 {
+    Wdirektory.SetNameUser();
     while (true)
     {
         menu();
@@ -50,6 +52,10 @@ void GetMenu()
             else if (number == 7)
             {
                 Wdirektory.RecordInformation();
+            }
+            else if (number == 8)
+            {
+                Wdirektory.SetNameUser();
             }
             else { Console.WriteLine($"Выберети пункт из меню"); }
         }
